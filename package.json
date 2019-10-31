@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "sudo node index.js",
+    "start": "sudo pm2 startOrRestart ecosystem.config.js",
     "start:dev": "sudo node --inspect-brk=192.168.1.21:9229 index.js"
   },
   "keywords": [],

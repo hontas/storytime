@@ -9,7 +9,10 @@ const board = new five.Board({
   io: new Raspi()
 });
 
+const log = (...args) => console.log(...args);
+
 board.on('ready', function() {
+  log('board ready');
   const yellowLed = new five.Led('P1-11');
   const greenLed = new five.Led('P1-13');
 
@@ -26,6 +29,7 @@ board.on('ready', function() {
   let isPlaying = false;
 
   const play = async (eventName) => {
+    log(`play: ${eventName}`);
     isPlaying = true;
     currentEvent = eventName;
     await iftttApi.triggerEvent(eventName);
@@ -33,6 +37,7 @@ board.on('ready', function() {
   };
 
   const pause = async () => {
+    log('pause');
     isPlaying = false;
     await iftttApi.triggerEvent(sonosEvents.pause);
     greenLed.off();
@@ -51,6 +56,7 @@ board.on('ready', function() {
   };
 
   const next = throttle(async () => {
+    log('next');
     yellowLed.blink();
     await iftttApi.triggerEvent(sonosEvents.next);
     isPlaying = true;
