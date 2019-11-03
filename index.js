@@ -72,7 +72,7 @@ board.on('ready', function() {
   yellowBtn.on('up', () => playOrPause(sonosEvents.mammaMu));
   greenBtn.on('up', () => playOrPause(sonosEvents.alfons));
   redBtn.on('up', () => playOrPause(sonosEvents.dagSpoket));
-  blueBtn.on('up', () => playOrPause(sonosEvents.mammaMu));
+  blueBtn.on('up', () => playOrPause(sonosEvents.music));
 
   yellowBtn.on('hold', onHold);
   greenBtn.on('hold', onHold);

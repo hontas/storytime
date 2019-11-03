@@ -13,7 +13,8 @@ const events = Object.freeze({
     previous: 'sonos_previous',
     mammaMu: 'sonos_play_mammamu',
     alfons: 'sonos_play_alfons',
-    dagSpoket: 'sonos_play_dagspoket'
+    dagSpoket: 'sonos_play_dagspoket',
+    music: 'sonos_play_lou_songs'
   }
 });
 
